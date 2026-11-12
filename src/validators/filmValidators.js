@@ -1,0 +1,9 @@
+import zod, { z } from "zod"
+
+const filmSchema = z.object({
+    title: z.string().trim().min(2, "El titulo no puede estar vacio"),
+    year: z.coerce.number().int("El año de estreno debe ser un numero entero"),
+    genre: z.enum(["Fantasia", "Drama", "Terror", "Misterio"], "El género debe estar dentro de las posibilidades")
+})
+
+export { filmSchema }
