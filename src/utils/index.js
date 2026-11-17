@@ -1,15 +1,17 @@
 const successResponse = (data, message) => {
-    return {
-              success: true,
-            data,
-            message
-    }
+  return {
+    success: true,
+    data,
+    message
+  }
 }
 
-const errorResponse = () => {
-    return {
-
-    }
+const errorResponse = (message, error = null) => {
+  return {
+    success: false,
+    error,
+    message
+  }
 }
 
-export { successResponse, errorResponse}
+export { successResponse, errorResponse }

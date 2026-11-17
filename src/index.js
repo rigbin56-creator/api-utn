@@ -7,7 +7,7 @@ import { authMiddleware } from "./middleware/authMiddleware.js"
 import dotenv from "dotenv"
 dotenv.config()
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 const URI_DB = process.env.URI_DB
 
 const app = express()
