@@ -69,7 +69,7 @@ const loginUser = async (req, res) => {
             return res.status(401).json({ error: "Credenciales invalidas"})
         }
 
-        const token = jwt.sign({ name: foundUser.name }, "contraseñasupersecreta", { expiresIn: "180h"})
+        const token = jwt.sign({ name: foundUser.name }, process.env.JWT_SECRET, { expiresIn: "180h"})
 
         res.json(successResponse(token, "Login exitoso!"))
     } catch (error) {
