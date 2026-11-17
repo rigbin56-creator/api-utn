@@ -61,7 +61,7 @@ const postFilm = async (req, res) => {
         return res.status(400).json({ error: validation.error.issues.map(e => ({ origin: e.path[0], message: e.message })) })
     }
 
-    const foundFilm = await File.findOne({title: body.title })
+    const foundFilm = await Film.findOne({title: body.title })
 
     if (foundFilm) {
         return res.status(409).json({ error: "La pelicula ya existe en la base de datos!!"})
